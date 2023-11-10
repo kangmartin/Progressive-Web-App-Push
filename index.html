@@ -1,0 +1,106 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+  >
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="#4285f4" />
+
+  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="icon" type="image/png" href="logo.png">
+  
+  <link rel="manifest" href="manifest.json">
+  <title>Notifications</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: #f44336;
+    }
+    input {
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      background-color: #4285f4;
+      color: #fff;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    button:hover {
+      background-color: #3367d6;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+
+
+  </style>
+</head>
+<body>
+  <main>
+    <section>
+      <h1>Native Push Notification System</h1>
+      <p id="warning-message">You need to add this application to the home screen to use it (mobile only).</p>
+      <input type="text" id="input" placeholder="Enter message" disabled>
+      <button id="subscribe-to-push" disabled>
+        Click here to get push notification !
+      </button>
+    </section>
+  </main>
+  <script src="./index.js"></script>
+  <script>
+    if (window.matchMedia('(display-mode: standalone)').matches) {
+      document.getElementById('input').disabled = false;
+      document.getElementById('subscribe-to-push').disabled = false;
+      document.getElementById('warning-message').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
+
+
+
